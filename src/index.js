@@ -2,13 +2,13 @@
   export function tree(obj) {
     let resStr = "";
     const count = 0;
-    function getProp(o, count) {
-      count++;
-      for (let prop in o) {
-        if (typeof o[prop] === "object") {
-          getProp(o[prop], count);
+    function getProp(object, step) {
+      step++;
+      for (const prop in object) {
+        if (typeof object[prop] === "object") {
+          getProp(object[prop], step);
         } else {
-          resStr += `|${" ".repeat(count)}` + "└─" + o[prop] + `\n`;
+          resStr += `|${" ".repeat(step)}` + "└─" + object[prop] + `\n`;
         }
       }
     }

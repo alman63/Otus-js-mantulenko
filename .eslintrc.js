@@ -20,6 +20,7 @@ module.exports = {
     "no-alert": "off",
     "no-restricted-globals": "off",
     "default-case": "off",
+    "no-useless-concat":"off",
     "no-fallthrough": "off",
     "prefer-destructuring": ["error", { object: true, array: false }],
     "max-len": [
