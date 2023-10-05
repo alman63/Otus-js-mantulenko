@@ -1,8 +1,7 @@
 
   export function tree(obj) {
     let resStr = "";
-    let count = 0;
-    getProp(obj, count);
+    const count = 0;
     function getProp(o, count) {
       count++;
       for (let prop in o) {
@@ -13,7 +12,7 @@
         }
       }
     }
-  
+    getProp(obj, count);
     console.log(resStr);
     return resStr;
   }
