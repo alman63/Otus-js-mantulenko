@@ -21,6 +21,9 @@ module.exports = {
     "no-restricted-globals": "off",
     "default-case": "off",
     "no-useless-concat":"off",
+    "no-param-reassign":"off",
+    "no-restricted-syntax":"off",
+    "prefer-template":"off",
     "no-fallthrough": "off",
     "prefer-destructuring": ["error", { object: true, array: false }],
     "max-len": [
