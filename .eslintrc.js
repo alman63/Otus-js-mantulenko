@@ -25,6 +25,8 @@ module.exports = {
     "no-restricted-syntax":"off",
     "prefer-template":"off",
     "no-fallthrough": "off",
+    'guard-for-in':'off',
+    'no-prototype-builtins':'off',
     "prefer-destructuring": ["error", { object: true, array: false }],
     "max-len": [
       "error",
