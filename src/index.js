@@ -4,6 +4,10 @@ export function deepEqual(obj1, obj2, err = '') {
     if (obj1 === obj2) {
         return { flag: true };
     }
+    if (Array.isArray(obj1) !== Array.isArray(obj2)) {
+        resStr = err;
+        return { flag: false, Error: resStr };
+    }
     for (const prop in obj1) {
         let resStr = err;
         if (!obj2.hasOwnProperty(prop)) {
