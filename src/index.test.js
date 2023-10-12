@@ -43,6 +43,20 @@ describe("deepEqual", () => {
     };
     expect(deepEqual(obj1,obj2)).toEqual({ flag: true });
   });
+  it("obj1 , obj2 ", () => {
+    const obj1 = {
+      0: 'a',
+      1: 'b',
+      2: 'c',
+  };
+    const obj2 = ['a', 'b', 'c'];
+    expect(deepEqual(obj1,obj2)).toEqual({ flag: false, Error: '' });
+  });
+  it("obj1 , obj2 ", () => {
+    const obj1 = {a: {0: 'a',1: 'b',2: 'c',}};
+    const obj2 = {a:['a', 'b', 'c']};
+    expect(deepEqual(obj1,obj2)).toEqual({ flag: false, Error: 'a.' });
+  });
 });
 
 
