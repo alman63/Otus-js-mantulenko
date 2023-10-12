@@ -2,7 +2,7 @@
 
 export function deepEqual(obj1, obj2, err = '') {
     if (obj1 === obj2) {
-        return true;
+        return { flag: true };
     }
     for (let prop in obj1) {
         let resStr = err;
@@ -14,9 +14,9 @@ export function deepEqual(obj1, obj2, err = '') {
             case 'object':
                 resStr += `${prop}.`;
                 if (
-                  obj1[p] instanceof Date &&
-                  obj2[p] instanceof Date &&
-                  String(obj1[p]) !== String(obj2[p])
+                  obj1[prop] instanceof Date &&
+                  obj2[prop] instanceof Date &&
+                  String(obj1[prop]) !== String(obj2[prop])
                 )
                   return {flag:false, Error:resStr}
                 const recursion = deepEqual(obj1[prop], obj2[prop], resStr);
