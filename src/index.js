@@ -5,7 +5,7 @@ export function deepEqual(obj1, obj2, err = '') {
         return { flag: true };
     }
     if (Array.isArray(obj1) !== Array.isArray(obj2)) {
-        resStr = err;
+        const resStr = err;
         return { flag: false, Error: resStr };
     }
     for (const prop in obj1) {
