@@ -27,6 +27,7 @@ module.exports = {
     "no-fallthrough": "off",
     'guard-for-in':'off',
     'no-prototype-builtins':'off',
+    'no-case-declarations':'off',
     "prefer-destructuring": ["error", { object: true, array: false }],
     "max-len": [
       "error",
