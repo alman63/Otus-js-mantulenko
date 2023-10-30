@@ -18,17 +18,17 @@ async function Tree(
     countDir = 0,
     countFile = 0
 ) {
-    if (depth && depth == step) {
+    if (depth && depth === step) {
         return [obj, countDir, countFile];
     } else {
         const files = await fs.readdir(path);
         step++;
-        let resultObj = obj;
+        const resultObj = obj;
         for (const file of files) {
             const isDir = await isDirectoryItems(`./${path}/${file}`);
             if (isDir) {
                 countDir++;
-                let dir = await Tree(
+                const dir = await Tree(
                     `${path}/${file}`,
                     depth,
                     resultObj[`${file}`],

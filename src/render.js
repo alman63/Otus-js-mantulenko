@@ -1,5 +1,5 @@
 const renderTree = (obj) => {
-    if (obj == 'undefined') console.log('gbgtw');
+    if (obj === 'undefined') console.log('gbgtw');
     let resStr = '';
     const count = 0;
     function getProp(object, step) {

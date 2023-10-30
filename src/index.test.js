@@ -1,6 +1,6 @@
 // const { Tree } = require('./index');
 // const { isDirectoryItems } = require('./isDirectory');
-const fs = require('fs/promises');
+// const fs = require('fs/promises');
 // jest.mock('fs/promises');
 // тестирование
 describe('isDirectoryItems', () => {
