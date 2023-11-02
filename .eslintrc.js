@@ -29,7 +29,7 @@ module.exports = {
         'no-prototype-builtins': 'off',
         'no-case-declarations': 'off',
         'max-len': 'off',
-        'no-return-assign': 'no-return-assign',
+        'no-return-assign': 'off',
         'prefer-destructuring': ['error', { object: true, array: false }],
         'max-len': [
             'error',
