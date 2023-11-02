@@ -28,15 +28,8 @@ module.exports = {
         'guard-for-in': 'off',
         'no-prototype-builtins': 'off',
         'no-case-declarations': 'off',
-        'max-len': 'off',
         'no-return-assign': 'off',
         'prefer-destructuring': ['error', { object: true, array: false }],
-        'max-len': [
-            'error',
-            {
-                ignoreComments: true,
-                ignoreStrings: true,
-            },
-        ],
+        'max-len': 'off',
     },
 };
