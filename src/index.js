@@ -1,9 +1,19 @@
+function getIndexChild(element) {
+    let firstSibling = element.parentElement.firstElementChild;
+    let indexChild = 1;
+    while (element !== firstSibling) {
+        firstSibling = firstSibling.nextElementSibling;
+        indexChild++;
+    }
+    return indexChild;
+}
+
 export function getPath(element) {
     let resultStr = '';
     if (!element) return Error;
-    while (element.tagName != 'HTML') {
+    while (element.tagName !== 'HTML') {
         let nameElemTag = element.tagName;
-        let nameElemClass = element.getAttribute('class');
+        const nameElemClass = element.getAttribute('class');
         const hasElemId = element.getAttribute('id');
         if (hasElemId) {
             resultStr = resultStr + ' > ' + `#${hasElemId}`;
@@ -25,14 +35,4 @@ export function getPath(element) {
         element = element.parentElement;
     }
     return resultStr.split(' ').reverse().join(' ').slice(0, -3);
-}
-
-function getIndexChild(element) {
-    let firstSibling = element.parentElement.firstElementChild;
-    let indexChild = 1;
-    while (element !== firstSibling) {
-        firstSibling = firstSibling.nextElementSibling;
-        indexChild++;
-    }
-    return indexChild;
 }
