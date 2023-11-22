@@ -1,5 +1,4 @@
 const fs = require('fs');
-const { chunk } = require('lodash');
 const { Transform } = require('stream');
 
 (async () => {
@@ -57,7 +56,7 @@ const { Transform } = require('stream');
             const chunkResultArr = [];
             const getArr = (chunk) => {
                 const chunkObj = JSON.parse(chunk);
-                for (prop in chunkObj) {
+                for (const prop in chunkObj) {
                     chunkResultArr.push(chunkObj[`${prop}`]);
                 }
                 return chunkResultArr;

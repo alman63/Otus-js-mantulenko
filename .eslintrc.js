@@ -30,6 +30,7 @@ module.exports = {
         'no-case-declarations': 'off',
         'no-shadow': 'off',
         'no-else-return': 'off',
+        'no-path-concat': 'off',
         'no-await-in-loop': 'off',
         'prefer-destructuring': ['error', { object: true, array: false }],
         'max-len': [
