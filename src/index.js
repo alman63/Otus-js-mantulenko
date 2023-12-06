@@ -35,6 +35,7 @@ const { Transform } = require('stream');
     });
 
     const getObjTransform = new Transform({
+        objectMode: true,
         transform(chunk, encoding, callback) {
             const chunkObj = {};
             const getObj = (chunk) => {
@@ -48,20 +49,22 @@ const { Transform } = require('stream');
                 }
                 return chunkObj;
             };
-            callback(null, JSON.stringify(getObj(chunk)));
+            this.push(getObj(chunk));
+            callback();
         },
     });
     const getResulArrTransform = new Transform({
-        transform(chunk, encoding, callback) {
-            const chunkResultArr = [];
-            const getArr = (chunk) => {
-                const chunkObj = JSON.parse(chunk);
+        objectMode: true,
+        transform(object, encoding, callback) {
+            const getArr = (object) => {
+                const chunkResultArr = [];
+                const chunkObj = object;
                 for (const prop in chunkObj) {
                     chunkResultArr.push(chunkObj[`${prop}`]);
                 }
-                return chunkResultArr;
+                return JSON.stringify(chunkResultArr);
             };
-            callback(null, JSON.stringify(getArr(chunk)));
+            callback(null, getArr(object));
         },
     });
 
